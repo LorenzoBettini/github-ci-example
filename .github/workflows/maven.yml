@@ -14,12 +14,10 @@ jobs:
         # test against several OSes:
         os: [ubuntu-latest, macos-latest, windows-latest]
         # test against several Java versions:
-        java: [ 17, 21 ]
-        # excludes JDK 11 on macOS and Windows
-        exclude:
-        - os: macos-latest
-          java: 21
-        - os: windows-latest
+        java: [ 17 ]
+        # includes JDK 21 on Linux
+        include:
+        - os: ubuntu-latest
           java: 21
 
     name: Build with Java ${{ matrix.java }} on ${{ matrix.os }}
