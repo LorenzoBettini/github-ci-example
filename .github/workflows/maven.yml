@@ -32,5 +32,10 @@ jobs:
       run: >
         mvn -f com.examples.myproject/pom.xml
         clean verify
-        surefire-report:report-only site:site -DgenerateReports=false
+        surefire-report:report-only
+    - name: Archive JUnit Report
+      uses: actions/upload-artifact@v4
+      with:
+        name: surefire-report-jdk-${{ matrix.java }}
+        path: '**/target/reports'
 
