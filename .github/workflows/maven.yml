@@ -34,7 +34,8 @@ jobs:
       run: >
         mvn -f com.examples.myproject/pom.xml
         clean verify ${{ matrix.additional-maven-args }}
-      env: 
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_TOKEN }}
     - name: Generate JUnit Report
       run: >
