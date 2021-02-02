@@ -21,5 +21,6 @@ jobs:
         java-version: 17
         distribution: 'temurin'
     - name: Build with Maven
-      run: mvn -f com.examples.myproject/pom.xml verify
+      run: mvn verify
+      working-directory: com.examples.myproject
 
