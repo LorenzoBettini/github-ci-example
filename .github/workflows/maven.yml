@@ -16,7 +16,7 @@ jobs:
       matrix:
         include:
           - java: 17
-            additional-maven-args: "-Pjacoco coveralls:report"
+            additional-maven-args: "-Pcoveralls"
           - java: 21
 
     name: Build with Java ${{ matrix.java }} on Linux
