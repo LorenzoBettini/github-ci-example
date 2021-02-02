@@ -20,5 +20,6 @@ jobs:
       with:
         java-version: 8
     - name: Build with Maven
-      run: mvn -f com.examples.myproject/pom.xml verify
+      run: mvn verify
+      working-directory: com.examples.myproject
 
